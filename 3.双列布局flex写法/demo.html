@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ch">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>双栏布局flex写法</title>
+	<style>
+		body {
+			margin: 0;
+		}
+
+		.container {
+			max-width: 1000px;
+			/*定宽*/
+			margin-left: auto;
+			margin-right: auto;
+			/*块级元素居中*/
+			background: #dddddd;
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content:space-around;
+		}
+
+		#aside {
+			width: 200px;
+			/*一栏宽度固定*/
+			min-height: 400px;
+			/*高度不确定，写个最小高度，方便布局*/
+			background: #666;
+		}
+
+		#main {
+			background: red;
+			min-height: 1000px;
+			/*高度不确定，写个最小高度*/
+			flex-grow:1;
+			/*宽度自适应，用flex-grow*/
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<aside id="aside"></aside>
+	<main id="main"></main>
+</div>
+</body>
+</html>

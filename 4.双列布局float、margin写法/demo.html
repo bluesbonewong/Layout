@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ch">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>双栏布局float、margin写法</title>
+	<style>
+		body {
+			margin:0;
+		}
+		.container {
+			max-width: 800px;
+			/*定宽*/
+			margin-left:auto;
+			margin-right:auto;
+			/*块级元素居中*/
+			background: #dddddd;
+		}
+		.clearfix:after {
+			/*伪类after。能不能不忘？？！！*/
+			clear: both;
+			content: '';
+			display: table;
+		}
+		#aside {
+			width: 200px;
+			/*一栏宽度固定*/
+			min-height:400px;
+			/*高度不确定，写个最小高度，方便布局*/
+			float: left;
+			background: #666;
+		}
+		#main {
+			margin-left: 220px;
+			background: red;
+			min-height: 1000px;
+			/*高度不确定，写个最小高度*/
+		}
+	</style>
+</head>
+<body>
+	<div class="container clearfix">
+		<aside id="aside"></aside>
+		<main id="main"></main>
+	</div>
+</body>
+</html>

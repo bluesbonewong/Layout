@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ch">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>三栏布局flex写法</title>
+	<style>
+		.wrapper {
+			max-width: 960px;
+			margin-left: auto;
+			margin-right: auto;
+			background: #dddddd;
+			display: flex;
+		}
+		.wrapper aside {
+			width: 200px;
+			min-height: 400px;
+			background: blue;
+			order:1;
+			flex-shrink: 0;
+			/*浏览器宽度不够不收缩，出现滚动条*/
+		}
+		#ad {
+			width: 200px;
+			min-height:400px;
+			background: green;
+			order:3;
+			flex-shrink: 0;
+			/*浏览器宽度不够不收缩，出现滚动条*/
+		}
+		.wrapper main {
+			background:red;
+			flex-grow: 1;
+			min-height:1000px;
+			order:2;
+			flex-shrink: 0;
+			/*浏览器宽度不够不收缩，出现滚动条*/
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<aside></aside>
+	<div id="ad"></div>
+	<main></main>
+</div>
+</body>
+</html>
